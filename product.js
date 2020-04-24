@@ -71,6 +71,7 @@ router.post('/edit', upload.single('picture'), async(req,res)=>{
 router.get('/insert',(req,res)=>{
     res.render('insert');
 })
+
 router.post('/insert', upload.single('picture'), async (req,res)=>{
     var img = fs.readFileSync(req.file.path);
     var encode_image = img.toString('base64');
