@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ATN PRODUCT</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/548976edd9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1 class="logo">ATN</h1>
+                <ul class="menu-area">
+                    <li><a href="/product">Home</a></li>
+                    <li><a href="/product/insert">Insert Product</a></li>
+                    <li>
+                        <form action="/product/search" method="POST">
+                            <input type="text" name="productName" id="">
+                            <input type="submit" value="Search">
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <table width="50%" border="1" class="content-table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Product Name</td>
+                <td>Product Price</td>
+                <td>Product Image</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        {{# each product}}
+        <tbody>
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{ProductName}}</td>
+                <td>{{ProductPrice}}</td>
+                <td><img src='/product/photos/{{_id}}' alt="" width="90px" height="100px"></td>
+                <td><a href="/product/edit?id={{_id}}"><i class="fas fa-edit"></i></a><a href="/product/delete?id={{_id}}"><i class="fas fa-trash-alt"></i></a></td>
+            </tr>
+        </tbody>  
+        {{/each}}
+    </table>
+</body>
+</html>
