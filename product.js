@@ -67,7 +67,7 @@ router.post('/edit', upload.single('picture'), async(req,res)=>{
     res.render('allProduct', {product:results});
 })
 
-//sanpham/insert->browser
+//insert
 router.get('/insert',(req,res)=>{
     res.render('insert');
 })
